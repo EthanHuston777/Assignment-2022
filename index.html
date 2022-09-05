@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<!------------------------------HEAD------------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<!------------------------------BODY------------------------------------------------>
+<body>
+	<!---------------------------------------------------->	
+	<header>
+		<!--Use Flexbox to create the navigation bar-->
+		<div class="flexbox-container">
+			<div class="box-1">
+				<img src="MEDIA/global.png" alt="Logo"/>		
+			</div>	
+				
+			<div class="box-2">
+				<p class="tagline">ITWD6.408 </p>
+			</div>
+			
+			<div class="box-3">
+				<div class="horizontal-nav">
+					<ul>
+						<li class="active"><a href="index.html">HOME</a></li>
+						<li><a href="forms.html">FORMS</a></li>
+						<li><a href="xml-rss.html">XML/RSS</a></li>
+						<li><a href="js-demo.html">JAVASCRIPT</a></li>
+						<li><a href="my-research.html">RESEARCH</a></li>	
+					</ul>
+				</div>			
+			</div>			
+			<div class="box-4">
+				<p onclick="openNav()">≡</p>
+			</div>				
+		</div>	
+
+		<!--Curtain menu: collapse this menu as default when loading the page-->
+		<nav id="curtain-nav">
+			<!--Add a close button (X) hyperlink on the top left corner-->
+			<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+			<div class="curtain-nav-content">
+				<ul>
+					<li class="active" class = "nav-li"><a href="index.html">HOME</a></li>
+					<li class = "nav-li"><a href="forms.html">FORMS</a></li>
+					<li class = "nav-li"><a href="xml-rss.html">XML/JSON</a></li>
+					<li class = "nav-li"><a href="js-demo.html">JAVASCRIPT</a></li>
+					<li class = "nav-li"><a href="my-research.html">RESEARCH</a></li>	
+				</ul>
+			</div>
+		</nav>
+	</header>
+	
+	<!---------------------------------------------------->	
+	<!--Main content section-->
+	<main>
+		<section class = "showcase"> 
+			<div class = "showcase-image"></div>
+			<div class = "showcase-text" >
+				<h3>Advanced Website Development</h3>
+				<h1>Ethan Huston</h1>
+				<p>Website Developer</p>
+			</div>
+		</section>
+		
+		<section class = "bio"> 
+			<h3>PERSONAL BIOGRAPHY</h3>
+			<div class = "flexbox-container-bio">
+				<div class = "bio-box-1">
+					<img src="MEDIA/magikarp.png" alt="Avatar" class = "avatar-image" alt=></img>
+				</div>
+				<div class = "bio-box-2">
+					<p>
+						Biography: My name is Ethan Huston and I am in my second year of the BCS, starting May 2021. Website develpoment was a course that I chose to take, but it is not my favourite.
+						Even though website development my not be my favourite subject, I still hope to achieve well and learn something ineresting from this course.
+						So far at EIT I have learnt the basics of a few languages including python, html, css, js, sql and some cmd/powershell. I find them all interesting in their own way and am eager to learn more.
+						
+					</p>
+				</div>
+			</div>
+		</section>
+		
+		<section class = "webtechno"> 
+			<h3>MY WEB TECHNOLOGIES</h3>
+			<p>Top 5 Technologies
+				<ol type = "1" class = "indented-list">
+					<li><a href="https://notepad-plus-plus.org">Notepad++</a></li>
+					<li><a href="https://github.com">Github</a></li>
+					<li><a href="https://www.acer.com/ac/en/NZ/content/home">Acer Computers</a></li>
+					<li><a href="https://www.google.com/drive/">Google Drive</a></li>
+					<li><a href="https://www.opera.com/gx">Opera Gx Browser</a></li>
+				</ol>
+			</p>
+		</section>
+		
+		<section class = "competences"> 
+			<h3 id="competences-title">MY WEB DEVELEOPMENT COMPETENCIES</h3>
+			<section class="flip-box" id="html-flip-box">
+			  <div class="flip-box-inner">
+				<div class="flip-box-front">
+				  <h2 class="h2-flip-box">HTML5 Mark-up</h2>
+				  <img class="flip-box-images" src="MEDIA/html5.png" alt="HTML5">
+				</div>
+				<div class="flip-box-back">
+				  <h2 class="h2-flip-box">6/10</h2>
+				</div>
+			  </div>
+			</section>
+			<section class="flip-box" id="css-flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<h2 class="h2-flip-box">CSS3 Styling</h2>
+						<img class="flip-box-images" src="MEDIA/css3.png" alt="CSS3"></img>
+					</div>
+					<div class="flip-box-back">
+						<h2 class="h2-flip-box">6/10</h2>
+					</div>
+				</div>
+			</section>
+			<section class="flip-box" id="js-flip-box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front">
+						<h2 class="h2-flip-box">JavaScript Interactivity</h2>
+						<img class="flip-box-images" src="MEDIA/javascript.png" alt="JavaScript"></img>
+					</div>
+					<div class="flip-box-back">
+						<h2 class="h2-flip-box">3/10</h2>
+					</div>
+				</div>
+			</section>
+		</section>
+		
+		<section class = "statement"> 
+			<h3>STATEMENT OF AUTHENTICITY</h3>
+			<p style = "italic">
+				<i>“I confirm that: <br/>
+				This is an original assessment and is entirely my own work.<br/>
+				It contains no material previously published or written by another person or myself except where due
+				acknowledgement is made in the text.<br/>
+				No material which to a substantial extent, has been submitted for any other academic course, is included
+				without acknowledgement.”</i>
+			</p>
+		</section>
+		
+	</main>
+	
+	<!---------------------------------------------------->	
+	<!--Footer section-->
+	<footer>
+		<section>
+			<img src="MEDIA/Facebook_Logo.png" alt="Facebook" class = "footer-socials"></img>
+			<img src="MEDIA/Twitter_Logo.png" alt="Twitter" class = "footer-socials"></img>
+			<img src="MEDIA/Tiktok_Logo.png" alt="Tiktok" class = "footer-socials"></img>
+			<img src="MEDIA/Instagram_Logo.png" alt="Instagram" class = "footer-socials"></img>
+			<img src="MEDIA/Linkedin_Logo.png" alt="Linkedin" class = "footer-socials"></img>
+		</section>
+		<section>
+			© 2022 Ethan Huston
+		</section>
+		<section>
+			<a href="privacy-policy.html">Privacy Policy</a>
+		</section>
+	</footer>
+	
+	<!--Embed the js file at the bottom of the html file-->
+	<script type="text/javascript" src="JS/javascript.js">
+	</script>
+
+</body>
+</html>
+

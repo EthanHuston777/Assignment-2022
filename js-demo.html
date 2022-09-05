@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>JS-Demo</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+		<!-- Self-made CSS-->
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	</head>
+  
+	<body>
+		<header>
+			<!--Use Flexbox to create the navigation bar-->
+			<div class="flexbox-container">
+				<div class="box-1">
+					<img src="MEDIA/global.png" alt="Logo"/>		
+				</div>	
+					
+				<div class="box-2">
+					<p class="tagline">ITWD6.408 </p>
+				</div>
+				
+				<div class="box-3">
+					<div class="horizontal-nav">
+						<ul>
+							<li><a href="index.html">HOME</a></li>
+							<li><a href="forms.html">FORMS</a></li>
+							<li><a href="xml-rss.html">XML/RSS</a></li>
+							<li class="active"><a href="js-demo.html">JAVASCRIPT</a></li>
+							<li><a href="my-research.html">RESEARCH</a></li>	
+						</ul>
+					</div>			
+				</div>			
+				<div class="box-4">
+					<p onclick="openNav()">≡</p>
+				</div>				
+			</div>	
+
+			<!--Curtain menu: collapse this menu as default when loading the page-->
+			<nav id="curtain-nav">
+				<!--Add a close button (X) hyperlink on the top left corner-->
+				<a href="javascript:void(0)" class="nav-close-button" onclick="closeNav()">❌</a>
+				<div class="curtain-nav-content">
+					<ul>
+						<li class = "nav-li"><a href="index.html">HOME</a></li>
+						<li class = "nav-li"><a href="forms.html">FORMS</a></li>
+						<li class = "nav-li"><a href="xml-rss.html">XML/RSS</a></li>
+						<li class="active" class = "nav-li"><a href="js-demo.html">JAVASCRIPT</a></li>
+						<li class = "nav-li"><a href="my-research.html">RESEARCH</a></li>	
+					</ul>
+				</div>
+			</nav>
+		</header>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<!--Button section-->
+				<div class="col-12 col-md-2">
+					<div class="container-fluid">
+						<div class="row justify-content-around">
+							<!--Button 1-->						
+							<button class="col-6 col-md-12 btn btn-primary bg-warning text-primary font-weight-bold mb-1" 
+									type="button" data-bs-toggle="collapse" data-bs-target="#button1" 
+									aria-expanded="false" aria-controls="button1">DEMO 1</button>
+							<!--Button 2-->
+							<button class="col-6 col-md-12 btn btn-primary bg-white text-primary font-weight-bold mb-1" 
+									type="button" data-bs-toggle="collapse" data-bs-target="#button2" 
+									aria-expanded="false" aria-controls="button2">DEMO 2</button>	 
+							<!--Button 3-->
+							<button class="col-6 col-md-12 btn btn-primary bg-white text-primary font-weight-bold mb-1" 
+									type="button" data-bs-toggle="collapse" data-bs-target="#button3" 
+									aria-expanded="false" aria-controls="button3">DEMO 3</button>
+							<!--Button 3-->
+							<button class="col-6 col-md-12 btn btn-primary bg-white text-primary font-weight-bold mb-1" 
+									type="button" data-bs-toggle="collapse" data-bs-target="#button4" 
+									aria-expanded="false" aria-controls="button4">DEMO 4</button>
+						</div>			
+					</div>			
+				</div>
+				<!--Main content section-->
+				<div class = "col-12 col-md-10">
+					<div class = "row">
+						<div class = "col-12">
+							<!--Content area 1 for button 1-->
+							<div class = "collapse show multi-collapse" id="button1">
+								<!--EXERCISE 1: SLIDESHOWS-->
+								<h2>SLIDESHOWS: MANUAL AND AUTOMATIC</h2>
+								<section>
+									<h3>MANUAL SLIDESHOW</h3>
+									<h4 id="manual-slide-title">GGPC 3060</h4>
+									<img id="manual-slide-image" src="MEDIA/Javascript/item0.png" height="250px">
+									<br>
+									<button onclick="previousItem()">PREVIOUS</button>
+									<button onclick="nextItem()">NEXT</button>
+								</section>
+								<br>
+								<section>
+									<h3>AUTOMATIC SLIDESHOW</h3>
+									<h4 id="auto-slide-title">GGPC 3060</h4>
+									<img id="auto-slide-image" src="MEDIA/Javascript/item0.png" height="250px">
+									<br>
+								</section>
+								<hr><hr>
+							</div>
+							
+							
+							<!--Content area 2 for button 2-->
+							<div class = "collapse multi-collapse" id="button2">
+								<!--DROPDOWN MENU-->
+								<h2>DROPDOWN MENU TO SELECT AN ITEM</h2>
+								<select id="myItemList" onchange="displayMyItem()"></select>
+								<br><br>
+								<section>
+									<h4 id="selectedItemTitle">GGPC 3060</h4>
+									<img id="selectedItemURL" src="MEDIA/Javascript/item0.png" height="250px">
+									<p id="selectedItemDescription">Prebuilt gaming pc, containing an i7-10700F, Nvidia RTX 3060, 16GB of RAM and 500GB of SSD capacity.</p>
+								</section>
+								<br>
+								<!--ADD NEW ITEM TO LIST-->
+								<h2>ADD NEW ITEM TO THE LIST</h2>
+								<section>
+									<h4>Add new item to the existing list: </h4>
+									<input type="text" id="my-item-title" size="40" placeholder="title">
+									<br>
+									<input type="text" id="my-item-image-url" size="40" placeholder="image url">
+									<br>
+									<input type="text" id="my-item-description" size="40" placeholder="description">
+									<br>
+									<input type="button" value="Add To List" onclick="AddItemToList()">
+								</section>
+								<hr><hr>
+							</div>
+							
+							
+							<!--Content area 3 for button 3-->
+							<div class ="collapse multi-collapse" id="button3">
+																
+								<h2>DROPDOWN MENU TO SELECT BACKGROUND COLOUR</h2>
+								<select id="myColorList" onchange="displayMyColor()"></select>	
+								<br><br>
+								<h2>DROPDOWN MENU TO SELECT AN ITEM</h2>
+								<select id="myFontSizeList" onchange="displayMyFontSize()"></select>
+								<br>
+								<section id="demo">
+									Here is an example text that will change depending on your selection, please change the font-size above.
+									Changing the First selector will cause the entire screen to change color.
+								</section>
+								<hr><hr>
+							</div>
+							
+							<!--Content area 4 for button 4-->
+							<div class = "collapse multi-collapse" id="button4">
+								<h2>ADD A NEW COMMENT</h2>
+								<section class="container">
+									<h4 id="my-movieTitle">GGPC 3060</h4>
+									<img id="my-movieImageURL" src="MEDIA/Javascript/item0.png" height="250px">
+									<p id="my-movieDescription">Prebuilt gaming pc, containing an i7-10700F, Nvidia RTX 3060, 16GB of RAM and 500GB of SSD capacity.</p>
+								<br>
+								<h4>Comments: </h4>
+								<div id="comment-list"> </div>
+								<h4>Add your comment: </h4>
+								<label>Name: </label><br>
+								<input type="text" id="comment_name" placeholder="Your name" size="90">
+								<br>
+								<label>Comment: </label><br>
+								<textarea id="comment_text" placeholder="Comment here" cols="90" rows="10">
+								</textarea>
+								<br>
+								<button onclick="addComment()">POST</button>
+								</section>
+								<hr><hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!---------------------------------------------------->	
+		<!--Footer section-->
+		<footer>
+			<section>
+				<img src="MEDIA/Facebook_Logo.png" alt="Facebook" class = "footer-socials"></img>
+				<img src="MEDIA/Twitter_Logo.png" alt="Twitter" class = "footer-socials"></img>
+				<img src="MEDIA/Tiktok_Logo.png" alt="Tiktok" class = "footer-socials"></img>
+				<img src="MEDIA/Instagram_Logo.png" alt="Instagram" class = "footer-socials"></img>
+				<img src="MEDIA/Linkedin_Logo.png" alt="Linkedin" class = "footer-socials"></img>
+			</section>
+			<section>
+				© 2022 Ethan Huston
+			</section>
+			<section>
+				<a href="privacy-policy.html">Privacy Policy</a>
+			</section>
+		</footer>	
+		
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+		<!--Embed the js file at the bottom of the html file-->
+		<script type="text/javascript" src="JS/javascript.js"></script>
+		
+
+	</body>
+</html>

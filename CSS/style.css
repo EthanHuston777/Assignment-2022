@@ -1,0 +1,629 @@
+/*-------------------------------------------------*/
+/* MOBILE FIRST APPROACH
+   All the below CSS styles are valid for Mobile (small) devices
+   Link: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+  
+   CSS Relative Unit
+   Link: https://www.w3schools.com/cssref/css_units.asp
+         https://css-tricks.com/css-font-size/
+         https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+*/
+
+/*--------------------------------------------------*/
+/*CSS formatting for universal webpagess*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #f4f4f4;	
+	font-family: "Calibri", Calibri, sans-serif;
+	font-size: 16px;/*Set the baseline font size for the whole website*/
+}
+
+/*Footer Area*/
+footer {
+	height: 12vh;
+	background-color: #DAF7A6;
+	text-align: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.footer-socials {
+	height: 5vh;
+}
+
+.footer-socials:hover {
+	opacity: 0.8;
+}
+
+
+/*Header Area*/
+/*---------------------------------*/
+/*CSS flexbox: 1D Card Layout
+  Link 1: https://codelikethis.com/lessons/responsive-layout/flexbox-layout 
+  Link 2: https://medium.com/@merveyuksek/webpage-layout-examples-with-flexbox-88287f010a08
+*/
+.flexbox-container {
+	/*flexbox container*/
+	display: flex;
+	flex-direction: row;/*display on a row => horizontally*/  
+	
+	background-color: #DAF7A6;
+	min-height: 5vh;
+}
+
+.box-1 {
+	flex: 0; /*wrap the content*/
+	justify-content: center;
+}	
+
+.box-2 {
+	flex: 1;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	font-size: 1.5em;
+	justify-content: left;
+	align-items: center;
+}
+  
+.box-3 {
+    flex: 4; /*horizontal nav on desktop*/
+	
+	/*Centering the content both vertical and horizontal*/
+	display: flex;
+	justify-content: center;
+	align-items: center;		
+}
+
+.box-4 {
+    flex: 1;/*Curtain menu*/
+	
+	font-size: 4.0em;
+	color: blue;
+	cursor: pointer;
+	text-align: right;
+	padding-right: 0.5em;
+}
+
+
+/*horizontal nav*/
+.horizontal-nav {
+	display: none; /*Hide on mobile devices*/
+}
+   
+/*Curtain menu*/
+nav {
+	padding: 10px 10px 10px 10px;/*10px 10px 10px 10px*/
+	overflow: visible;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	padding: 10px;
+}
+
+nav ul li {
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+nav ul li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;	
+}
+
+nav ul li ul li {
+	background: #555; 
+	display: block; 
+	font-size: 1em;
+}
+
+nav ul li ul li a {
+	display: block; 
+	text-align: left;
+
+}
+
+nav ul li.dropdown:hover ul {
+	display: block;
+}
+
+
+#curtain-nav {
+	height: 70%;/*100%*/
+	width: 0;/*Hide it as default when loading page*/
+	padding: 0;
+	position: fixed;
+	z-index: 3;
+	top: 0; 
+	right: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.98);
+	overflow-x: hidden;
+	transition: 0.5s;	
+}
+
+.curtain-nav-content {
+	/*For curtain menu*/
+	position: relative;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;	
+	overflow: visible;
+}
+
+.nav-close-button {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 2.0em;
+	color: white;
+	text-decoration: none;
+}
+
+/*Set hover effect for items in the menu*/
+.active {
+	background-color: #FF9633;
+}
+
+.nav-li:hover:not(.active) {
+	background-color: green;
+}
+
+.privacy-text {
+	min-height: 80vh;
+	padding: 20px;
+}
+
+/*Define styles for main section for home (index) page*/
+/*Main area*/
+main {
+	min-height: 85vh;
+	background-color: gray;
+	
+	/*use CSS grid*/
+	display: grid;
+	grid-template-areas: "area-1"
+						 "area-2"
+					 	 "area-3"
+					 	 "area-4"
+						 "area-5";	
+}
+
+.showcase {
+	grid-area: area-1;
+	min-height: 30vh;
+	background-color: gray;
+}
+
+.showcase-image {
+	/* The image used */
+	background-image: url("../MEDIA/background.jpg");
+
+	/* Add the blur effect */
+	filter: blur(0.4em);
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.showcase-text {
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+	color: white;
+	font-weight: bold;
+	border: 0.2em solid #f1f1f1;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	width: 80%;
+	padding: 2em;
+	text-align: center;
+}
+
+.bio {
+	grid-area: area-2;
+	min-height: 15vh;
+	background-color: #F1C40F;
+	padding: 10px;
+}
+
+.flexbox-container-bio {
+	display: flex;
+	flex-direction: column;/*display on a row => horizontally*/  
+	min-height: 5vh;
+}
+
+.bio-box-1 {
+	flex: 0;
+	
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	font-size: 1.5em;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.bio-box-2 {
+	flex: 1;
+	padding: 1em;
+	/*Centering both vertical and horizontal*/
+	display: flex;
+	font-size: 1em;
+	justify-content: center;
+	text-align: left;
+	padding: 10px;
+}
+
+.avatar-image {
+	border-radius: 50%;
+	width: 6em;
+	height: 6em;
+		padding: 10px;
+}
+
+.webtechno {
+	grid-area: area-3;
+	min-height: 15vh;
+	background-color: #EC7063;
+	padding: 10px;
+}
+
+.indented-list {
+	padding-left: 2em;
+}
+
+.competences {
+	grid-area: area-4;
+	min-height: 30vh;
+	background-color: #DAF7A6;
+	display: grid;
+	grid-template-areas:"area-a" 
+						"area-b"
+						"area-c" 
+						"area-d";
+	overflow: hidden;
+	padding: 10px;
+}
+
+
+.flip-box {
+	background-color: transparent;
+	width: 80vw;
+	height: 20vh;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+
+#competences-title {
+	grid-area: area-a;
+}
+
+#html-flip-box {
+	grid-area: area-b
+}
+
+#css-flip-box {
+	grid-area: area-c
+}
+
+#js-flip-box {
+	grid-area: area-d
+}
+
+.h2-flip-box {
+	font-size: 1em;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 10px;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front,
+.flip-box-back {
+	position: absolute;
+	top: 0;
+	left: 20;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.flip-box-images {
+	height: 12vh;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+	color: black;
+	background-color: #ADD8E6;
+}
+
+/* Style the back side */
+.flip-box-back {
+	background-color: dodgerblue;
+	color: white;
+	transform: rotateY(180deg);
+	display: grid;
+	align-content: center;
+}
+
+.statement {
+	grid-area: area-5;
+	min-height: 15vh;
+	background-color: #FF7F50;
+	font-size: 1em;
+	padding: 10px;
+}
+
+
+
+/*-----------------------------------------------------------------------*/
+/*CSS for research area*/
+.research-area {
+	min-height: 100vh;
+	background-color: white;
+	display: grid;
+	grid-template-areas:"area-z" 
+						"area-y"
+						"area-x" 
+						"area-w"
+						"area-v"
+						"area-u";
+	overflow: hidden;
+	padding: 10px;
+}
+
+.flip-box-research {
+	background-color: transparent;
+	width: 95vw;
+	height: 45vh;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 5px;
+}
+
+#copyright-box{
+	grid-area: area-z
+}
+
+#privacy-box{
+	grid-area: area-y
+}
+
+#seo-box{
+	grid-area: area-x
+}
+
+#web-publishing-box{
+	grid-area: area-w
+}
+
+#web-performance-box{
+	grid-area: area-v
+}
+
+#web-security-box{
+	grid-area: area-u
+}
+
+.h2-flip-box-research {
+	font-size: 1.5vh;
+	padding: 10px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner-research {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 5px;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box-research:hover .flip-box-inner-research {
+	transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front-research,
+.flip-box-back-research {
+	position: absolute;
+	top: 0;
+	left: 20;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.flip-box-images-research {
+	width: 80%;
+	height:80%;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front-research {
+	color: black;
+	background-color: #ffe6cd;
+}
+
+/* Style the back side */
+.flip-box-back-research {
+	background-color: #ffe6cd;
+	color: black;
+	transform: rotateY(180deg);
+	display: grid;
+	align-content: center;
+	padding: 10px;
+}
+
+#white-background {
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	font-size: 0.8vh;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.creative-licences-images {
+	width: 4wv;
+	height: 4vh;
+}
+
+.privacy-principle {
+	font-size: 1.2vh;
+}
+
+#small-left-text {
+	font-size: 1.25vh;
+	text-align: left;
+	padding-left: 20px;
+}
+
+#smaller-left-text {
+	font-size: 0.8vh;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.xml-example {
+	padding: 5px;
+	justify-content: center;
+}
+
+/*-------------------------------------------------------------------*/
+/*RESPONSIVE CSS*/
+/*THUMB RULE: Mobile First
+  Use min-width to detect device screen size.
+  min-width: 768px means that "when viewport is 768px or larger (Tablet or PC), set these styles; 
+             otherwise (Mobile) set above styles"  
+*/
+@media screen and (min-width: 768px) {
+	
+   /*Make Horizontal nav visible*/
+   .horizontal-nav {
+	   display: block;
+	   
+	   	background-color: #DAF7A6; 
+		padding: 10px 10px 10px 10px;
+   }
+   
+   .horizontal-nav ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.horizontal-nav ul li {
+		display: inline-block;
+		font-family: 'Oswald', sans-serif;
+		font-size: 1.0em;
+	}
+
+	.horizontal-nav ul li a {
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;	
+	}
+
+	.horizontal-nav ul li:hover:not(.active) {
+		background-color: green;
+	}
+
+
+	/*Change layout to big screen*/
+	main {
+		grid-template-areas: "area-1 area-1"
+							 "area-2 area-3"
+							 "area-4 area-4"
+							 "area-5 area-5";
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.flexbox-container-bio {
+		flex-direction: row;
+	}
+	
+	.bio-box-1 {
+		justify-content: center;
+		align-items: center;
+		font-size: 1.5em;
+	}
+
+	.bio-box-2 {
+		padding: 1em;
+		/*Centering both vertical and horizontal*/
+		display: flex;
+		font-size: 1em;
+		justify-content: center;
+		text-align: left
+	}
+	
+	.competences {
+		display: grid;
+		grid-template-areas:"area-a area-a area-a" 
+							"area-b area-c area-d";
+	}
+	
+	.flip-box {
+		width: 25vw;
+	}
+	
+	.research-area {
+		display: grid;
+		grid-template-areas:"area-z area-y area-x" 
+							"area-w area-v area-u";
+	}	
+
+	.flip-box-research {
+		width: 30vw;
+	}	
+}
+
